@@ -4,7 +4,8 @@ import "./App.css";
 import { connect } from "react-redux";
 import SidePanel from "./SidePanel/SidePanel";
 import Messages from "./Messages/Messages";
-import VQuestion from './Questions/VQuestion';
+import CreateQuestions from './Questions/CreateQuestions';
+import DisplayQuestions from "./Questions/DisplayQuestions";
 
 const App = ({ currentUser, currentChannel, isPrivateChannel }) => (
   <Grid columns="equal" className="app" style={{ background: '#eee' }}>
@@ -14,13 +15,13 @@ const App = ({ currentUser, currentChannel, isPrivateChannel }) => (
         currentUser={currentUser}
       />
     </Grid.Column>
-    <Grid.Column>
+    <Grid.Column width="6">
       <Segment>
-        <VQuestion></VQuestion>
+        {currentUser.displayName==='Teacher'?<CreateQuestions/>: <DisplayQuestions/>}
       </Segment>
     </Grid.Column>
 
-    <Grid.Column style={{ marginLeft: 320 }}>
+    <Grid.Column style={{ marginLeft: 115 }}>
       <Messages
         key={currentChannel && currentChannel.id}
         currentChannel={currentChannel}

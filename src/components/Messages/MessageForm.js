@@ -1,5 +1,5 @@
 import React from "react";
-import uuidv4 from "uuidv4";
+import {uuid} from "uuidv4";
 import firebase from "../../firebase";
 import { Segment, Button, Input, Popup } from "semantic-ui-react";
 import { Picker, emojiIndex } from "emoji-mart";
@@ -144,7 +144,7 @@ class MessageForm extends React.Component {
   uploadFile = (file, metadata) => {
     const pathToUpload = this.state.channel.id;
     const ref = this.props.getMessagesRef();
-    const filePath = `${this.getPath()}/${uuidv4()}.jpg`;
+    const filePath = `${this.getPath()}/${uuid()}.jpg`;
 
     this.setState(
       {
@@ -208,7 +208,7 @@ class MessageForm extends React.Component {
     const { message, loading, modal, uploadState, percentUploaded, emojiPicker } = this.state;
 
     return (
-      <Segment className="message__form" >
+      <Segment className="message__form">
 
         <Input
           fluid

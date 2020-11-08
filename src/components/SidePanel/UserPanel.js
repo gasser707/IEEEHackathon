@@ -117,10 +117,9 @@ class UserPanel extends React.Component {
     const { user, modal, previewImage, croppedImage } = this.state;
 
     return (
-      <Grid style={{ background: '#4a154b'}}>
+      <Grid style={{ background: '#4a154b', width:'200px'}}>
         <Grid.Column>
           <Grid.Row style={{ padding: "1.2em", margin: 0 }}>
-            {/* App Header */}
             <Header inverted floated="left" as="h2">
               <Icon name="code" />
               <Header.Content>KidsLearn</Header.Content>

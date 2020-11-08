@@ -1,4 +1,3 @@
-import initialData from './initialData';
 import React from 'react';
 import Column from './Column';
 import { DragDropContext } from 'react-beautiful-dnd';
@@ -8,7 +7,7 @@ const Container = styled.div`
   display: flex;
 `;
 class VQuestion extends React.Component {
-    state = initialData;
+    state = this.props.data;
 
     onDragEnd = result => {
         document.body.style.color = 'inherit';

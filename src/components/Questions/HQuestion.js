@@ -1,4 +1,3 @@
-import data2 from './data2';
 import React from 'react';
 import HColumn from './HColumn';
 import { DragDropContext } from 'react-beautiful-dnd';
@@ -8,7 +7,7 @@ const Container = styled.div`
   display: flex;
 `;
 class HQuestion extends React.Component {
-    state = data2;
+    state =this.props.data;
 
     onDragEnd = result => {
         document.body.style.color = 'inherit';
