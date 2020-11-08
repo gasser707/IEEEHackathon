@@ -1,0 +1,319 @@
+html,
+body,
+.app {
+  height: 100vh;
+  background: #eee;
+}
+
+/* SidePanel.js */
+.menu {
+  padding-bottom: 2em;
+}
+
+/* Messages.js */
+.messages {
+  height: 500px;
+  overflow-y: scroll;
+}
+
+@media screen and (max-width: 1280px) {
+  .messages {
+    height: 330px
+  }
+}
+/* MessageForm.js */
+.message__form {
+  position: fixed !important;
+  bottom: 1em;
+  margin-left: 320px !important;
+  left: 0;
+  right: 1em;
+  z-index: 200;
+}
+
+.emoijpicker {
+  position: absolute;
+}
+
+/* Message.js */
+.message__self {
+  border-left: 2px solid orange;
+  padding-left: 8px;
+}
+
+.message__image {
+  padding: 1em;
+}
+
+/* ProgressBar.js */
+.progress__bar {
+  margin: 0.3em 0 0 0 !important;
+}
+
+/* ColorPanel.js */
+.color__container {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  width: 35px;
+  border-radius: 3px;
+}
+
+.color__square {
+  width: 35px;
+  height: 35px;
+}
+
+.color__overlay {
+  width: 85px;
+  height: 35px;
+  transform: rotate(225deg);
+}
+
+/* Typing.js */
+.user__typing {
+  font-style: italic;
+  font-weight: bold;
+  margin-right: 3px;
+}
+
+.typing {
+  width: 5em;
+  height: 2em;
+  position: relative;
+  padding: 10px;
+  margin-left: 5px;
+  background: #e6e6e6;
+  border-radius: 20px;
+}
+
+.typing__dot {
+  float: left;
+  width: 8px;
+  height: 8px;
+  margin: 0 4px;
+  background: #8d8c91;
+  border-radius: 50%;
+  opacity: 0;
+  animation: loadingFade 1s infinite;
+}
+
+.typing__dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.typing__dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing__dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes loadingFade {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Skeleton.js */
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.skeleton::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  animation: sweep 2s infinite;
+  background-image: linear-gradient(
+    to left,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+}
+
+@keyframes sweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(150%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.skeleton__avatar {
+  height: 35px;
+  width: 35px;
+  border-radius: 3px;
+  background-color: rgba(58, 57, 57, 0.3);
+}
+
+.skeleton__author {
+  background-color: rgba(58, 57, 57, 0.3);
+  width: 120px;
+  height: 10px;
+  border-radius: 3px;
+  position: absolute;
+  bottom: 30px;
+  left: 40px;
+  right: 0;
+}
+
+.skeleton__details {
+  background-color: rgba(58, 57, 57, 0.3);
+  height: 20px;
+  border-radius: 3px;
+  position: absolute;
+  bottom: 5px;
+  left: 40px;
+  right: 20px;
+}
+
+
+.landingHeader {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)),
+    url('../assets/images/hero.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh; /*100 percent of viewport*/
+  background-attachment: fixed;
+  box-sizing: border-box;
+}
+
+.heroTextBox {
+  position: absolute;
+  width: 60%;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-75%, -10%);
+  color: whitesmoke;
+  font-family: 'Permanent Marker', cursive;
+  box-sizing: border-box;
+}
+.heroTextBox p{
+    margin:0;
+    font-size: 47px;
+    margin-bottom:30px
+
+}
+
+.heroText {
+    font-size: 35px;
+    font-weight: 20px;
+    margin-left: 80px;
+    padding-bottom: 4%;
+    line-height: 30px;
+  }
+  
+  .btn{
+    font-size: 25px;
+    margin-left: 10px;
+  }
+
+.btn:link,
+.btn:visited {
+  display: inline-block !important;
+  padding: 10px 30px;
+  border-radius: 200px;
+  text-decoration: none;
+  color: white;
+  border: 1px solid #4a154b;
+  transition: background-color 0.4s;
+  cursor: pointer;
+}
+
+.btnFull:link,
+.btnFull:visited {
+  /*flatui*/
+  background-color: #4a154b;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #4a154b21;
+}
+
+nav.landing{
+  display: inline-block;
+  margin-left:200px;
+
+}
+
+
+    
+@media screen and (max-width: 950px) {
+    .heroTextBox p{
+        font-size:40px;
+    }
+
+    .heroText{
+        font-size:27px;
+    }
+    .btn{
+        font-size:23px;
+        padding:7px 10px;
+    }
+   
+   }
+    
+    @media screen and (max-width: 650px) {
+        .heroTextBox p{
+            font-size:35px;
+        }
+
+        .heroText{
+            font-size:25px;
+        }
+        .btn{
+            font-size:20px;
+            padding:5px 15px;
+        }
+        nav.landing{
+          margin-left:100px;
+        }
+        
+    
+    }
+    
+    @media screen and (max-width: 480px) {
+    
+        .heroTextBox p{
+            font-size:27px;
+        }
+
+        .heroText{
+            font-size:20px;
+        }
+        .btn{
+            font-size:15px;
+            padding:5px 15px;
+            margin-left:150px
+        }
+        nav.landing{
+          margin-left:100px;
+        }
+    }
+
+
+    .slackPurple{
+      color: #4a154b;
+    }
